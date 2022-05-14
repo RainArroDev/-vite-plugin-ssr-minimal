@@ -1,24 +1,16 @@
-Example of using `vite-plugin-ssr` with Vue that showcases many features.
+Styles are not loaded in production build CSR navigation
 
-For a simpler example, check out [/examples/vue/](/examples/vue/).
+How to reproduce:
 
-Features:
- - Client Routing (+ usage of `navigate()`)
- - Data Fetching (server-side fetching + isomorphic fetching)
- - Pre-rendering (+ usage of the `prerender()` hook)
- - Route Function
- - TypeScript
- - Markdown
- - Error Page
- - Active Links
- - Access `pageContext` from any Vue component
- - HTML streaming
+- Run the app in prod build (npm run prod)
+- Load index page in SSR (styles are loaded)
+- Navigate to `/random` route
+- Reload the page
+- Navigate to `/index` route (styles are not loaded)
 
 To run it:
 
 ```bash
-git clone git@github.com:brillout/vite-plugin-ssr
-cd vite-plugin-ssr/examples/vue-full/
 npm install
-npm run start
+npm run prod
 ```
